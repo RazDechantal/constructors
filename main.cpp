@@ -27,8 +27,11 @@ public:
     }
     ~Pair()
     {
+        delete pa;
+        delete pb;
         pa = nullptr;
         pb = nullptr;
+        cout << "The memory address was deleted successfully!" << endl;
     }
 
     void show_data()
@@ -51,9 +54,9 @@ int main()
     Pair q(p);
     q.show_data();
 
-    // Pair *hp = new Pair(23, 42);
-    // hp->show_data();
-    // delete hp;
+    Pair *hp = new Pair(23, 42);
+    hp->show_data();
+    delete hp;
 
     /*
         if ((hp->pa != nullptr) && (hp->pb != nullptr))
